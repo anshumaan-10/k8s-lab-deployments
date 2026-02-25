@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: phoenix-sa
+  namespace: web
+---
+# VULN-06: Wildcard RBAC — phoenix-sa can read all secrets in 'web' namespace.
+# Fix: vulnerabilities/VULN-06-wildcard-rbac/artifacts/fix-phoenix-role-least-privilege.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: phoenix-role
+  namespace: web
+rules:
+- apiGroups: [""]
+  resources: ["*"]       # VULN-06: wildcard — should be ["configmaps"]
+  verbs: ["get", "watch", "list"]
+- apiGroups: ["apps"]
+  resources: ["*"]       # VULN-06: wildcard — should be []
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: phoenix-binding
+  namespace: web
+subjects:
+- kind: ServiceAccount
+  name: phoenix-sa
+  namespace: web
+roleRef:
+  kind: Role
+  name: phoenix-role
+  apiGroup: rbac.authorization.k8s.io

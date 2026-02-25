@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: phoenix-config
+  namespace: web
+data:
+  # DEBUG_PATH enables the RCE endpoint at /<DEBUG_PATH>/
+  # In a real attack this would be a random string to obscure the endpoint.
+  # Set to "debug" here for the lab so it is easy to find.
+  DEBUG_PATH: "debug"
