@@ -29,7 +29,7 @@ spec:
       - name: dockerhub-secret
       containers:
       - name: phoenix-app
-        image: anshumaan10/phoenix:7fc47b383bcaab01db9b6f1ed1774c5d875c8648
+        image: anshumaan10/phoenix:ea290725d4e04f1dd8ba9fccb5da987f1fda18d2
         ports:
         - containerPort: 8080
           hostPort: 8080
