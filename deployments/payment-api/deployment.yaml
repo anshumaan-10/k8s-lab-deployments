@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: payment-api
-        image: anshumaan10/payment-api:039e8521a98943a4e0c70f421fcdb2d967b7071f
+        image: anshumaan10/payment-api:90f0f10c4df2283f78619ac563d210c957b5ccd5
         ports:
         - containerPort: 8080
         livenessProbe:
