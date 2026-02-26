@@ -24,7 +24,7 @@ spec:
       serviceAccountName: checkout-sa
       containers:
       - name: checkout
-        image: anshumaan10/checkout:a8bb30c7ae57cf7d0b01135a9ffade2108fa2930
+        image: anshumaan10/checkout:cfe42db0c3d33d6cf90549644429eb260eee9c15
         env:
         - name: PAYMENT_API_URL
           value: "http://payment-api:8080/transactions"
