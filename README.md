@@ -162,3 +162,17 @@ kubectl apply -f argocd/app-of-apps.yaml
 | `deployments/phoenix/rbac.yaml` | VULN-06: wildcard `resources: ["*"]` RBAC |
 
 See [k8s-security-lab](https://github.com/anshumaan-10/k8s-security-lab) for the full writeup and fix YAMLs.
+
+## Overview
+
+This repository contains project code and supporting assets. It is maintained actively with periodic updates.
+
+## Getting Started
+
+1. Clone this repository.
+2. Install dependencies as documented in the project files.
+3. Run/build using the project-specific commands.
+
+## Contribution Guidelines
+
+Please open an issue for major changes and submit focused pull requests with clear descriptions.
